@@ -1,11 +1,26 @@
+# Matrimony Site 
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# project setUp
 
-Currently, two official plugins are available:
+1. Creating project using Vite:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ npm create vite@latest ----Enter
+ select react---------------Enter
+ selcet typescript----------Enter
+
+ cd matrimony-site
+ npm i
+ npm run dev
+
+2. Installing Tailwind CSS:
+
+   npm install -D tailwindcss@3 postcss autoprefixer
+
+   npx tailwindcss init -p
+
+
+
 
 ## Expanding the ESLint configuration
 
@@ -67,3 +82,5 @@ export default tseslint.config([
   },
 ])
 ```
+
+
