@@ -1,4 +1,11 @@
-# Matrimony Site 
+# Matrimony Site -
+Welcome to SoulMates – a thoughtfully crafted matrimony site built to help individuals find meaningful connections and lifelong partners.SoulMates is more than just a matrimony portal. It's a place where tradition meets technology. We help users discover compatible matches through a smooth and personalized experience, whether they are looking based on culture, lifestyle, beliefs, or personal preferences.
+
+# Build With-
+ React.js – for a fast, dynamic UI
+
+ Tailwind CSS – for clean, responsive design
+ 
 # React + TypeScript + Vite
 
 # project setUp
