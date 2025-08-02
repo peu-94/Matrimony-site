@@ -1,18 +1,25 @@
 import React from "react";
+import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
 interface LoginPopUpProps {
   visible: boolean;
   onClose: () => void;
 }
+
 const LoginPopUp = ({ visible, onClose }: LoginPopUpProps) => {
   if (!visible) return null;
-  return (
-    <div className="fixed inset-0 z-50  flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white p-6 rounded-lg w-full max-w-md shadow-lg relative">
+
+  return createPortal(
+    <div className="fixed inset-0 z-[1001] flex items-center justify-center bg-black/50">
+      <div
+        className="relative w-full max-w-md rounded-lg bg-white p-8 shadow-2xl
+                      text-gray-900 text-base font-normal"
+      >
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl"
+          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+          aria-label="Close"
         >
           <X />
         </button>
@@ -22,11 +29,14 @@ const LoginPopUp = ({ visible, onClose }: LoginPopUpProps) => {
         </h2>
 
         <form className="space-y-4">
-          <select className="w-full border px-3 py-2 rounded" required>
+          <select
+            className="w-full border border-gray-300 rounded px-3 py-2 text-base font-normal"
+            required
+          >
             <option value="">Profile for</option>
             <option value="myself">Myself</option>
-            <option value="myself">Son</option>
-            <option value="myself">Daughter</option>
+            <option value="son">Son</option>
+            <option value="daughter">Daughter</option>
             <option value="sibling">Sibling</option>
             <option value="friend">Friend</option>
           </select>
@@ -35,40 +45,48 @@ const LoginPopUp = ({ visible, onClose }: LoginPopUpProps) => {
             <input
               type="text"
               placeholder="First Name"
-              className="w-1/2 border px-3 py-2 rounded"
+              className="w-1/2 border border-gray-300 rounded px-3 py-2 text-base font-normal
+                         placeholder:font-normal placeholder:text-gray-400"
               required
             />
             <input
               type="text"
               placeholder="Last Name"
-              className="w-1/2 border px-3 py-2 rounded"
+              className="w-1/2 border border-gray-300 rounded px-3 py-2 text-base font-normal
+                         placeholder:font-normal placeholder:text-gray-400"
               required
             />
           </div>
 
-          <select className="w-full border px-3 py-2 rounded" required>
+          <select
+            className="w-full border border-gray-300 rounded px-3 py-2 text-base font-normal"
+            required
+          >
             <option value="">Religion</option>
             <option value="hindu">Hindu</option>
             <option value="muslim">Muslim</option>
-            <option value="Jain">Jain</option>
-            <option value="Sikh">Sikh</option>
-            <option value="Parsi">Parsi</option>
-            <option value="Buddhist">Buddhist</option>
-            <option value="Spiritual">Spiritual</option>
-            <option value="other">other</option>
+            <option value="jain">Jain</option>
+            <option value="sikh">Sikh</option>
+            <option value="parsi">Parsi</option>
+            <option value="buddhist">Buddhist</option>
+            <option value="spiritual">Spiritual</option>
+            <option value="other">Other</option>
           </select>
 
-          <select className="w-full border px-3 py-2 rounded" required>
+          <select
+            className="w-full border border-gray-300 rounded px-3 py-2 text-base font-normal"
+            required
+          >
             <option value="">Community</option>
             <option value="Bengali">Bengali</option>
-            <option value="Hindi">Punjabi</option>
-            <option value="Hindi">Odia</option>
-            <option value="Hindi">Kannada</option>
-            <option value="Hindi">Tamil</option>
-            <option value="Hindi">Telegu</option>
-            <option value="Hindi">Malayali</option>
-            <option value="Hindi">Assamese</option>
-            <option value="Hindi">Rajasthani</option>
+            <option value="Punjabi">Punjabi</option>
+            <option value="Odia">Odia</option>
+            <option value="Kannada">Kannada</option>
+            <option value="Tamil">Tamil</option>
+            <option value="Telugu">Telugu</option>
+            <option value="Malayali">Malayali</option>
+            <option value="Assamese">Assamese</option>
+            <option value="Rajasthani">Rajasthani</option>
           </select>
 
           <button
@@ -86,7 +104,8 @@ const LoginPopUp = ({ visible, onClose }: LoginPopUpProps) => {
           </a>
         </p>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

@@ -13,7 +13,7 @@ function SearchPage() {
   };
   return (
     <div className="flex flex-row justify-between">
-      <div className="inline-flex w-full justify-between gap-x-3 rounded-md bg-black opacity-60 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm">
+      <div className="inline-flex z-1000 w-full justify-between gap-x-3 rounded-md bg-black opacity-60 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm">
         <label className="flex flex-col  text-sm font-medium text-gray-500">
           I'm looking for
           <select className="mt-1 text-black px-3 py-2 rounded border">
@@ -94,11 +94,15 @@ function SearchPage() {
         {/* <LoginPopUp /> */}
         {showLoginPopup && (
           <div className="">
-            {/* <button onClick={handleClosePopUp}>close</button> */}
             <LoginPopUp onClose={handleClosePopUp} visible={showLoginPopup} />
           </div>
         )}
       </div>
+      {/* {showLoginPopup && (
+          <div className="">
+            <LoginPopUp onClose={handleClosePopUp} visible={showLoginPopup} />
+          </div>
+        )} */}
     </div>
   );
 }
